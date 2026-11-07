@@ -1,11 +1,14 @@
 import { Pressable, Text, StyleSheet } from "react-native";
+import { useNavigation } from "@react-navigation/native";
 
 export default function CategoriesCard({
     category
 }) {
+    const navigation = useNavigation();
+
     return (
         <Pressable
-            onPress={() => console.log(`Selected category: ${category}`)}
+            onPress={() => navigation.navigate('Category', { category })}
             accessibilityRole="button"
             style={styles.category}
         >

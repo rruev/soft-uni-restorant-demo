@@ -1,4 +1,5 @@
 import { Pressable, StyleSheet, Text, View } from "react-native";
+import { useNavigation } from "@react-navigation/native";
 
 export default function FeaturedCard({
     name,
@@ -8,8 +9,10 @@ export default function FeaturedCard({
     emoji,
     color
 }) {
+    const navigation = useNavigation();
+
     return (
-        <Pressable style={styles.card} onPress={() => console.log(`Pressed ${name}`)}>
+        <Pressable style={styles.card} onPress={() => navigation.navigate('Details', { item: { name, category, description, price, emoji, color } })}>
             <View style={[styles.dishImage, { backgroundColor: color }]}>
                 <Text accessible={false} style={styles.dishEmoji}>{emoji}</Text>
             </View>
