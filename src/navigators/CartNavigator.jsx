@@ -6,14 +6,20 @@ const Stack = createStackNavigator();
 
 export default function CartNavigator() {
     return(
-        <Stack.Navigator initialRouteName="Cart">
+        <Stack.Navigator initialRouteName="GlobalCart">
             <Stack.Screen
-                name="Cart"
+                name="GlobalCart"
                 component={CartScreen}
+                options={{
+                    title: "Cart"
+                }}
             />
             <Stack.Screen
                 name="CheckOut"
                 component={CheckOutScreen}
+                options={{
+                    title: "Check Out"
+                }}
             />
         </Stack.Navigator>
     );

@@ -11,7 +11,7 @@ export default function HomeNavigator({ navigation }) {
     return (
         <Stack.Navigator initialRouteName="Home" screenOptions={{
             headerRight: () => (
-                <Pressable onPress={() => navigation.navigate('CartTab')}>
+                <Pressable onPress={() => navigation.navigate('Cart')}>
                     <Ionicons name="cart" size={24} color="black" style={{ marginRight: 16 }} />
                 </Pressable>
             )
